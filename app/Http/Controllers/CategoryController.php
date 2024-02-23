@@ -5,19 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller {
-    public function beautyHealth() {
+    public function getBeautyHealth() {
         return view('category.beautyHealth');
     }
 
-    public function foodBeverage() {
+    public function getFoodBeverage() {
         return view('category.foodBeverage');
     }
 
-    public function homeCare() {
+    public function getHomeCare() {
         return view('category.homeCare');
     }
 
-    public function babyKid() {
+    public function getBabyKid() {
         return view('category.babyKid');
     }
 }
