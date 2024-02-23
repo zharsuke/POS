@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class SalesController extends Controller
 {
-    public function index() {
+    public function getSales() {
         return view('sales');
     }
 }

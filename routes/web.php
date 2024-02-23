@@ -1,9 +1,6 @@
 <?php
 
-use App\Http\Controllers\BabyKidController;
-use App\Http\Controllers\BeautyHealthController;
-use App\Http\Controllers\FoodBeverageController;
-use App\Http\Controllers\HomeCareController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SalesController;
 use App\Http\Controllers\UserController;
@@ -22,18 +19,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 // home
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'getHome']);
 
 // products (route prefix)
 Route::prefix('category')->group(function () {
-    Route::get('/food-beverage', [FoodBeverageController::class, 'index']);
-    Route::get('/beauty-health', [BeautyHealthController::class, 'index']);
-    Route::get('/home-care', [HomeCareController::class, 'index']);
-    Route::get('/baby-kid', [BabyKidController::class, 'index']);
+    Route::get('/food-beverage', [CategoryController::class, 'getFoodBeverage']);
+    Route::get('/beauty-health', [CategoryController::class, 'getBeautyHealth']);
+    Route::get('/home-care', [CategoryController::class, 'getHomeCare']);
+    Route::get('/baby-kid', [CategoryController::class, 'getBabyKid']);
 });
 
 // user page (route parameter)
-Route::get('/user/{id}/name/{name}', [UserController::class, 'show']);
+Route::get('/user/{id}/name/{name}', [UserController::class, 'getUser']);
 
 // sales page
-Route::get('/sales', [SalesController::class, 'index']);
+Route::get('/sales', [SalesController::class, 'getSales']);
